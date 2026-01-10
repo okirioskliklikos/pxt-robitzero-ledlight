@@ -1,7 +1,7 @@
 {
   "rb0ledlight.rb0ledlight_advancedcreate|block": "φωτάκι led στον ακροδέκτη %pin2",
-  "rb0ledlight.rb0ledlight_simpleChangeBrightness|block": "άλλαξε %port φωτεινότητα στο φωτάκι led κατά %step\\%",
-  "rb0ledlight.rb0ledlight_simpleSetBrightness|block": "όρισε %port φωτεινότητα στο φωτάκι led σε %value\\%",
+  "rb0ledlight.rb0ledlight_simpleChangeBrightness|block": "άλλαξε φωτεινότητα στο %port φωτάκι led κατά %step\\%",
+  "rb0ledlight.rb0ledlight_simpleSetBrightness|block": "όρισε φωτεινότητα στο %port φωτάκι led σε %value\\%",
   "rb0ledlight.rb0ledlight_simplecreate|block": "φωτάκι led στη θύρα %port",
   "rb0ledlight.rb0ledlight_simpleturnoff|block": "φωτάκι led %port σβήσε",
   "rb0ledlight.rb0ledlight_simpleturnon|block": "φωτάκι led %port άναψε",
