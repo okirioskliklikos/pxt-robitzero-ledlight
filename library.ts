@@ -35,7 +35,7 @@ namespace rb0ledlight {
 
     /**
     * Initialize Led Light
-    * @param port Keyestudio port that Led Light screen is connected
+    * @param port Keyestudio port where the LED is connected
     */
     //% blockId="rb0ledlight_simplecreate"
     //% block="LED light at port %port" 
@@ -62,7 +62,7 @@ namespace rb0ledlight {
 
     /**
     * Turn on led light
-    * @param port Keyestudio port that Led Light is connected
+    * @param port Keyestudio port where the LED is connected
     */
     //% blockId="rb0ledlight_simpleturnon"
     //% block="turn on LED light at port %port" 
@@ -76,7 +76,7 @@ namespace rb0ledlight {
 
     /**
     * Turn off led light
-    * @param port Keyestudio port that Led Light is connected
+    * @param port Keyestudio port where the LED is connected
     */
     //% blockId="rb0ledlight_simpleturnoff"
     //% block="turn off LED light at port %port" 
@@ -90,7 +90,7 @@ namespace rb0ledlight {
 
     /**
     * Set Led Light Brightness
-    * @param port Keyestudio port that Led Light is connected
+    * @param port Keyestudio port where the LED is connected
     * @param value brightness value in percentage
     */
     //% blockId="rb0ledlight_simpleSetBrightnesss"
@@ -105,7 +105,7 @@ namespace rb0ledlight {
 
     /**
     * Change Led Light Brightness
-    * @param port Keyestudio port that Led Light is connected
+    * @param port Keyestudio port where the LED is connected
     * @param step how much to change the current led light brightness
     */
     //% blockId="rb0ledlight_simpleChangeBrightnesss"
@@ -117,5 +117,20 @@ namespace rb0ledlight {
         let pin1 = rb0base.getPinFromKeyestudioPort(port);
         let br1 = getBrightness(pin1);
         setBrightness(pin1, br1 + step);
+    }
+
+    /**
+    * Writes a digital value to the selected port.
+    * @param port Keyestudio port where the LED is connected
+    * @param bit Digital value (0 or 1)
+    */
+    //% blockId="rb0ledlight_advancedsetbit"
+    //% block="set %port LED light to %bit" 
+    //% weight=90 blockGap=8 advanced=true
+    //% port.defl=KeyestudioPort.P0
+    //% bit.min=0 bit.defl=1 bit.max=1
+    export function rb0ledlight_setBit(port: KeyestudioPort, bit: number) {
+        let pin1 = rb0base.getPinFromKeyestudioPort(port);
+        pins.digitalWritePin(pin1, bit)
     }
 }
