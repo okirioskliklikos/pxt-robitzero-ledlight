@@ -1,5 +1,6 @@
 {
   "rb0ledlight.rb0ledlight_advancedcreate|block": "LED light at pin %pin2",
+  "rb0ledlight.rb0ledlight_setBit|block": "set %port LED light to %bit",
   "rb0ledlight.rb0ledlight_simpleChangeBrightness|block": "change %port LED brightness by %step\\%",
   "rb0ledlight.rb0ledlight_simpleSetBrightness|block": "set %port LED brightness to %value\\%",
   "rb0ledlight.rb0ledlight_simplecreate|block": "LED light at port %port",
