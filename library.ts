@@ -71,7 +71,7 @@ namespace rb0ledlight {
     export function rb0ledlight_simpleturnon(port: KeyestudioPort) {
         let pin1 = rb0base.getPinFromKeyestudioPort(port);
         rb0base.enablePin(pin1);
-        setBrightness(pin1, 0);
+        setBrightness(pin1, 100);
     }
 
     /**
@@ -131,6 +131,10 @@ namespace rb0ledlight {
     //% bit.min=0 bit.defl=1 bit.max=1
     export function rb0ledlight_setBit(port: KeyestudioPort, bit: number) {
         let pin1 = rb0base.getPinFromKeyestudioPort(port);
-        pins.digitalWritePin(pin1, bit)
+        if (bit === 1) {
+            setBrightness(pin1, 100);
+        } else {
+            setBrightness(pin1, 0);
+        }
     }
 }
