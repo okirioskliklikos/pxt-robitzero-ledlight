@@ -1,11 +1,11 @@
 {
-  "rb0ledlight.rb0ledlight_advancedcreate|block": "φωτάκι led στο %pin2",
-  "rb0ledlight.rb0ledlight_setBit|block": "όρισε το %port φωτάκι led σε %bit",
-  "rb0ledlight.rb0ledlight_simpleChangeBrightness|block": "άλλαξε φωτεινότητα στο %port φωτάκι led κατά %step\\%",
-  "rb0ledlight.rb0ledlight_simpleSetBrightness|block": "όρισε φωτεινότητα στο %port φωτάκι led σε %value\\%",
-  "rb0ledlight.rb0ledlight_simplecreate|block": "φωτάκι led στην θύρα %port",
-  "rb0ledlight.rb0ledlight_simpleturnoff|block": "φωτάκι led %port σβήσε",
-  "rb0ledlight.rb0ledlight_simpleturnon|block": "φωτάκι led %port άναψε",
+  "rb0ledlight.changeBrightnessSimple|block": "άλλαξε φωτεινότητα στο %port φωτάκι led κατά %step\\%",
+  "rb0ledlight.initAdvanced|block": "φωτάκι led στο %pin2",
+  "rb0ledlight.initSimple|block": "φωτάκι led στην θύρα %port",
+  "rb0ledlight.setBitAdvanced|block": "όρισε το %port φωτάκι led σε %bit",
+  "rb0ledlight.setBrightnessSimple|block": "όρισε φωτεινότητα στο %port φωτάκι led σε %value\\%",
+  "rb0ledlight.turnOffSimple|block": "φωτάκι led %port σβήσε",
+  "rb0ledlight.turnOnSimple|block": "φωτάκι led %port άναψε",
   "rb0ledlight|block": "Φωτάκι Led",
   "{id:category}Rb0ledlight": "Rb0ledlight"
 }
