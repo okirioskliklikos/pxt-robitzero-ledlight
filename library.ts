@@ -3,6 +3,7 @@
  * Functions to operate a Led Light
  */
 //% block="LED Light"
+//% groups=['Analog Ports']
 //% weight=9 color=#e86800 icon="\uf0a9"
 namespace rb0ledlight {
 
@@ -17,6 +18,12 @@ namespace rb0ledlight {
         //set brightness between 0-100%
         value = Math.max(0, Math.min(100, value));
 
+        let isanalogpin = rb0base.isAnalogPin(pin);
+
+        if (isanalogpin) {
+            value = value>=50 ? 100 : 0;
+        }
+
         if (index < 0) {
             brightness_pins.push(pin)
             brightness_values.push(value)
@@ -24,8 +31,16 @@ namespace rb0ledlight {
             brightness_values[index] = value
         }
 
-        const aBright = (value / 100) * MAXBRIGHTNESS;
-        pins.analogWritePin(pin, aBright);
+        if (isanalogpin) {
+            const aBright = (value / 100) * MAXBRIGHTNESS;
+            pins.analogWritePin(pin, aBright);
+        } else {
+            if (value === 100) {
+                pins.digitalWritePin(pin, 1);
+            } else {
+                pins.digitalWritePin(pin, 0);
+            }
+        }
     }
 
     function getBrightness(pin: DigitalPin): number {
@@ -96,10 +111,11 @@ namespace rb0ledlight {
     //% blockId="rb0ledlight_setBrightnesssSimple"
     //% block="set %port LED brightness to %value\\%"
     //% weight=90 blockGap=8
+    //% group="Analog Ports"
     //% port.defl=KeyestudioPort.P0
     //% value.defl=100 value.min=0 value.max=100
-    export function setBrightnessSimple(port: KeyestudioPort, value: number) {
-        let pin1 = rb0base.getPinFromKeyestudioPort(port);
+    export function setBrightnessSimple(port: KeyestudioAnalogPort, value: number) {
+        let pin1 = rb0base.getPinFromKeyestudioAnalogPort(port);
         setBrightness(pin1, value);
     }
 
@@ -111,10 +127,11 @@ namespace rb0ledlight {
     //% blockId="rb0ledlight_changeBrightnesssSimple"
     //% block="change %port LED brightness by %step\\%"
     //% weight=90 blockGap=8
+    //% group="Analog Ports"
     //% port.defl=KeyestudioPort.P0
     //% step.defl=1
-    export function changeBrightnessSimple(port: KeyestudioPort, step: number) {
-        let pin1 = rb0base.getPinFromKeyestudioPort(port);
+    export function changeBrightnessSimple(port: KeyestudioAnalogPort, step: number) {
+        let pin1 = rb0base.getPinFromKeyestudioAnalogPort(port);
         let br1 = getBrightness(pin1);
         setBrightness(pin1, br1 + step);
     }
@@ -126,7 +143,7 @@ namespace rb0ledlight {
     */
     //% blockId="rb0ledlight_setBitAdvanced"
     //% block="set %port LED light to %bit" 
-    //% weight=90 blockGap=8 advanced=true
+    //% weight=90 blockGap=8 advanced=true    
     //% port.defl=KeyestudioPort.P0
     //% bit.min=0 bit.defl=1 bit.max=1
     export function setBitAdvanced(port: KeyestudioPort, bit: number) {
