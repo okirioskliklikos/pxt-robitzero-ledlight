@@ -7,5 +7,6 @@
   "rb0ledlight.turnOffSimple|block": "turn off LED light at port %port",
   "rb0ledlight.turnOnSimple|block": "turn on LED light at port %port",
   "rb0ledlight|block": "LED Light",
-  "{id:category}Rb0ledlight": "Rb0ledlight"
+  "{id:category}Rb0ledlight": "Rb0ledlight",
+  "{id:group}Analog ports": "Analog ports"
 }

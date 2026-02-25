@@ -7,5 +7,6 @@
   "rb0ledlight.turnOffSimple|block": "φωτάκι led %port σβήσε",
   "rb0ledlight.turnOnSimple|block": "φωτάκι led %port άναψε",
   "rb0ledlight|block": "Φωτάκι Led",
-  "{id:category}Rb0ledlight": "Rb0ledlight"
+  "{id:category}Rb0ledlight": "Rb0ledlight",
+  "{id:group}Analog ports": "Αναλογικές θύρες"
 }

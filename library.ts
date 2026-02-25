@@ -3,7 +3,7 @@
  * Functions to operate a Led Light
  */
 //% block="LED Light"
-//% groups=['Analog Ports']
+//% groups=['Analog ports']
 //% weight=9 color=#e86800 icon="\uf0a9"
 namespace rb0ledlight {
 
@@ -111,7 +111,7 @@ namespace rb0ledlight {
     //% blockId="rb0ledlight_setBrightnesssSimple"
     //% block="set %port LED brightness to %value\\%"
     //% weight=90 blockGap=8
-    //% group="Analog Ports"
+    //% group="Analog ports"
     //% port.defl=KeyestudioPort.P0
     //% value.defl=100 value.min=0 value.max=100
     export function setBrightnessSimple(port: KeyestudioAnalogPort, value: number) {
@@ -127,7 +127,7 @@ namespace rb0ledlight {
     //% blockId="rb0ledlight_changeBrightnesssSimple"
     //% block="change %port LED brightness by %step\\%"
     //% weight=90 blockGap=8
-    //% group="Analog Ports"
+    //% group="Analog ports"
     //% port.defl=KeyestudioPort.P0
     //% step.defl=1
     export function changeBrightnessSimple(port: KeyestudioAnalogPort, step: number) {
